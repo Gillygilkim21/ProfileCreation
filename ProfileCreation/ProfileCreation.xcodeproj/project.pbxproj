@@ -17,6 +17,8 @@
 		D47716A1274C0010007727BB /* SecureFieldToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47716A0274C0010007727BB /* SecureFieldToggle.swift */; };
 		D47716A3274C04B9007727BB /* TextFieldClearToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47716A2274C04B9007727BB /* TextFieldClearToggle.swift */; };
 		D47716A5274C060B007727BB /* TextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47716A4274C060B007727BB /* TextFieldPadding.swift */; };
+		D47716A7274C06FF007727BB /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47716A6274C06FF007727BB /* ConfirmationView.swift */; };
+		D47716A9274C0717007727BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47716A8274C0717007727BB /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		D47716A0274C0010007727BB /* SecureFieldToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFieldToggle.swift; sourceTree = "<group>"; };
 		D47716A2274C04B9007727BB /* TextFieldClearToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearToggle.swift; sourceTree = "<group>"; };
 		D47716A4274C060B007727BB /* TextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPadding.swift; sourceTree = "<group>"; };
+		D47716A6274C06FF007727BB /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		D47716A8274C0717007727BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +104,11 @@
 		D4771671274937F7007727BB /* ProfileCreation */ = {
 			isa = PBXGroup;
 			children = (
+				D47716AB274C08BF007727BB /* View Components */,
+				D47716AA274C0885007727BB /* Views */,
 				D4771672274937F7007727BB /* ProfileCreationApp.swift */,
-				D4771674274937F7007727BB /* ContentView.swift */,
 				D4771676274937F9007727BB /* Assets.xcassets */,
 				D4771678274937F9007727BB /* Preview Content */,
-				D47716A0274C0010007727BB /* SecureFieldToggle.swift */,
-				D47716A2274C04B9007727BB /* TextFieldClearToggle.swift */,
-				D47716A4274C060B007727BB /* TextFieldPadding.swift */,
 			);
 			path = ProfileCreation;
 			sourceTree = "<group>";
@@ -134,6 +136,26 @@
 				D477168F274937F9007727BB /* ProfileCreationUITestsLaunchTests.swift */,
 			);
 			path = ProfileCreationUITests;
+			sourceTree = "<group>";
+		};
+		D47716AA274C0885007727BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4771674274937F7007727BB /* ContentView.swift */,
+				D47716A8274C0717007727BB /* SignUpView.swift */,
+				D47716A6274C06FF007727BB /* ConfirmationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D47716AB274C08BF007727BB /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				D47716A0274C0010007727BB /* SecureFieldToggle.swift */,
+				D47716A2274C04B9007727BB /* TextFieldClearToggle.swift */,
+				D47716A4274C060B007727BB /* TextFieldPadding.swift */,
+			);
+			path = "View Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4771675274937F7007727BB /* ContentView.swift in Sources */,
+				D47716A7274C06FF007727BB /* ConfirmationView.swift in Sources */,
 				D47716A1274C0010007727BB /* SecureFieldToggle.swift in Sources */,
+				D47716A9274C0717007727BB /* SignUpView.swift in Sources */,
 				D4771673274937F7007727BB /* ProfileCreationApp.swift in Sources */,
 				D47716A3274C04B9007727BB /* TextFieldClearToggle.swift in Sources */,
 				D47716A5274C060B007727BB /* TextFieldPadding.swift in Sources */,

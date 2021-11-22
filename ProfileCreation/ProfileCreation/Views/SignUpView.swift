@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  SignUpView.swift
 //  ProfileCreation
 //
-//  Created by Gilbert Kim on 11/20/21.
+//  Created by Gilbert Kim on 11/22/21.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct SignUpView: View {
 	
 	@State private var firstName = ""
 	@State private var emailAddress = ""
@@ -17,7 +17,7 @@ struct ContentView: View {
 	private let submitButtonGradientStartColor = Color(red: 255 / 255, green: 73 / 255, blue: 19 / 255)
 	private let submitButtonGradientEndColor = Color(red: 255 / 255, green: 38 / 255, blue: 72 / 255)
 	
-	var body: some View {
+    var body: some View {
 		NavigationView {
 			VStack {
 				Text("Use the form below to create your portfolio. An email and password are required.")
@@ -31,9 +31,8 @@ struct ContentView: View {
 				TextFieldClearToggle(title: "Website", text: $website)
 					.modifier(TextFieldPadding())
 				Spacer()
-				Button(action: {
-					// TODO: go to the next screen
-				}, label: {
+				
+				NavigationLink(destination: ConfirmationView(), label: {
 					Text("Submit")
 						.bold()
 						.foregroundColor(.white)
@@ -46,11 +45,11 @@ struct ContentView: View {
 			}
 			.navigationTitle("Profile Creation")
 		}
-	}
+    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
+    }
 }
