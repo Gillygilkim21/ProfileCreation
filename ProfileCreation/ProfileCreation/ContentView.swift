@@ -22,26 +22,15 @@ struct ContentView: View {
 			VStack {
 				Text("Use the form below to create your portfolio. An email and password are required.")
 					.padding()
-				
-				TextField("First Name", text: $firstName)
-					.padding(.horizontal)
-					.textFieldStyle(.roundedBorder)
-				
-				TextField("Email Address", text: $emailAddress)
-					.padding(.horizontal)
-					.textFieldStyle(.roundedBorder)
-				
-				SecureField("Password", text: $password)
-					.padding(.horizontal)
-					.textFieldStyle(.roundedBorder)
-				
-				TextField("Website", text: $website)
-					.padding(.horizontal)
-					.modifier(ClearButton(text: $emailAddress))
-					.textFieldStyle(.roundedBorder)
-				
+				TextFieldClearToggle(title: "First Name", text: $firstName)
+					.modifier(TextFieldPadding())
+				TextFieldClearToggle(title: "Email Address", text: $emailAddress)
+					.modifier(TextFieldPadding())
+				SecureFieldToggle(title: "Password", text: $password)
+					.modifier(TextFieldPadding())
+				TextFieldClearToggle(title: "Website", text: $website)
+					.modifier(TextFieldPadding())
 				Spacer()
-				
 				Button(action: {
 					// TODO: go to the next screen
 				}, label: {
