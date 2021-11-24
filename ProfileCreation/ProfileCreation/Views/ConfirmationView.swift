@@ -34,7 +34,6 @@ struct ConfirmationView: View {
 				.disabled(true)
 		}
 		.navigationTitle(String(format: String(localized: "confirmation_welcome"), firstName))
-//		.navigationTitle("Hello, \(firstName)")
 		.navigationBarBackButtonHidden(true)
 	}
 }
