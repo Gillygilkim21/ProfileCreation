@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  ProfileCreation
+
+  Created by Gilbert Kim on 11/23/21.
+  
+*/
+
+// Note: I only translated the first string using google translate
+"profile_creation_title" = "Creación de Perfil";
+"profile_creation_instructions" = "Use the form below to create your portfolio. An email and password are required.";
+"first_name_label" = "First Name";
+"email_address_label" = "Email Address";
+"password_label" = "Password";
+"website_label" = "Website";
+"submit_label" = "Submit";
+"required_field_instructions" = "* Indicates a required field";
+
+"confirmation_welcome" = "Hello, %@";
+"confirmation_message" = "Your super-awesome portfolio has been successfully submitted! The details below will be public within your community!";
+"sign_in_label" = "Sign In";

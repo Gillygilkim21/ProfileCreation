@@ -26,14 +26,14 @@ struct SignUpView: View {
 	var body: some View {
 		NavigationView {
 			VStack {
-				Text("Use the form below to create your portfolio. An email and password are required.")
+				Text(String(localized: "profile_creation_instructions"))
 					.padding()
 				
-				TextField("First Name", text: $firstName)
+				TextField(String(localized: "first_name_label"), text: $firstName)
 					.modifier(TextFieldPadding())
 				
 				ZStack {
-					TextField("Email Address", text: $emailAddress)
+					TextField(String(localized: "email_address_label") + "*", text: $emailAddress)
 						.modifier(TextFieldPadding())
 						.autocapitalization(.none)
 					if (!emailAddress.isEmpty && !isValidEmail(emailAddress)) {
@@ -48,10 +48,10 @@ struct SignUpView: View {
 				
 				ZStack {
 					if (isSecured) {
-						SecureField("Password*", text: $password)
+						SecureField(String(localized: "password_label") + "*", text: $password)
 							.modifier(TextFieldPadding())
 					} else {
-						TextField("Password*", text: $password)
+						TextField(String(localized: "password_label") + "*", text: $password)
 							.modifier(TextFieldPadding())
 					}
 					if (!password.isEmpty) {
@@ -60,7 +60,7 @@ struct SignUpView: View {
 							Button(action: {
 								isSecured.toggle()
 							}, label: {
-								Image(systemName: self.isSecured ? "eye.slash" : "eye")
+								Image(systemName: isSecured ? "eye.slash" : "eye")
 									.foregroundColor(.gray)
 									.padding(.trailing, 24)
 							})
@@ -69,7 +69,7 @@ struct SignUpView: View {
 				}
 				
 				ZStack {
-					TextField("Website", text: $website)
+					TextField(String(localized: "website_label"), text: $website)
 						.modifier(TextFieldPadding())
 						.autocapitalization(.none)
 					if (!website.isEmpty && !isValidURL(website)) {
@@ -82,15 +82,15 @@ struct SignUpView: View {
 					}
 				}
 				
-				Text("* Indicates a required field")
+				Text(String(localized: "required_field_instructions"))
 					.foregroundColor(Color.gray)
 				Spacer()
 				NavigationLink(destination: ConfirmationView(firstName: firstName, emailAddress: emailAddress, website: website), label: {
-					ConfirmButton(title: "Submit", isDisabled: disableConfirm)
+					ConfirmButton(title: String(localized: "submit_label"), isDisabled: disableConfirm)
 				})
 					.disabled(disableConfirm)
 			}
-			.navigationTitle("Profile Creation")
+			.navigationTitle(String(localized: "profile_creation_title"))
 		}
 	}
 	

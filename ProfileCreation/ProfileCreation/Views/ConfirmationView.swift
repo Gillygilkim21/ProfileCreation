@@ -15,7 +15,7 @@ struct ConfirmationView: View {
 	
 	var body: some View {
 		VStack() {
-			Text("Your super-awesome portfolio has been successfully submitted! The details below will be public within your community!")
+			Text(String(localized: "confirmation_message"))
 			if (!website.isEmpty) {
 				Link("\(website)", destination: URL(string: website)!)
 					.padding()
@@ -29,11 +29,12 @@ struct ConfirmationView: View {
 			Spacer()
 			// I need to specify a destination so just specify one but disable it
 			NavigationLink(destination: SignUpView(), label: {
-				ConfirmButton(title: "Sign In", isDisabled: false)
+				ConfirmButton(title: String(localized: "sign_in_label"), isDisabled: false)
 			})
 				.disabled(true)
 		}
-		.navigationTitle("Hello, \(firstName)")
+		.navigationTitle(String(format: String(localized: "confirmation_welcome"), firstName))
+//		.navigationTitle("Hello, \(firstName)")
 		.navigationBarBackButtonHidden(true)
 	}
 }
