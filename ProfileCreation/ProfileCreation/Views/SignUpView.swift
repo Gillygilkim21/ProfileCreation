@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-/// TODO:
-/// - Have an indicator for required fields
-
 struct SignUpView: View {
 	
 	@State private var firstName = ""
