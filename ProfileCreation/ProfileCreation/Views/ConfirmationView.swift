@@ -10,22 +10,24 @@ import SwiftUI
 struct ConfirmationView: View {
 	
 	@State var firstName: String
-	@State var emailAddress: String
-	@State var website: String
+	@State var emailAddress: EmailAddress
+	@State var website: Website
 	
 	var body: some View {
 		VStack() {
 			Text(String(localized: "confirmation_message"))
-			if (!website.isEmpty) {
-				Link("\(website)", destination: URL(string: website)!)
+			if (!website.value.isEmpty) {
+				Link("\(website.value)", destination: URL(string: website.value)!)
 					.padding()
 			}
 			if (!firstName.isEmpty) {
 				Text("\(firstName)")
 					.padding()
 			}
-			Text("\(emailAddress)")
-				.padding()
+			if (!emailAddress.value.isEmpty) {
+				Text("\(emailAddress.value)")
+					.padding()
+			}
 			Spacer()
 			// I need to specify a destination so just specify one but disable it
 			NavigationLink(destination: SignUpView(), label: {
@@ -40,6 +42,6 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
 	static var previews: some View {
-		ConfirmationView(firstName: "FirstName", emailAddress: "Test@gmail.com", website: "test.com")
+		ConfirmationView(firstName: "FirstName", emailAddress: EmailAddress(value: "Test@gmail.com"), website: Website(value: "test.com"))
 	}
 }

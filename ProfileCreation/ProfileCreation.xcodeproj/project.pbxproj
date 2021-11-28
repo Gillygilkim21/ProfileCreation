@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40693702753B67300E85C65 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406936F2753B67300E85C65 /* EmailAddress.swift */; };
+		D40693722753B68300E85C65 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40693712753B68300E85C65 /* Website.swift */; };
+		D40693742753B85F00E85C65 /* EmailAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40693732753B85F00E85C65 /* EmailAddressTests.swift */; };
+		D40693762753B87900E85C65 /* WebsiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40693752753B87900E85C65 /* WebsiteTests.swift */; };
 		D4771673274937F7007727BB /* ProfileCreationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4771672274937F7007727BB /* ProfileCreationApp.swift */; };
 		D4771675274937F7007727BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4771674274937F7007727BB /* ContentView.swift */; };
 		D4771677274937F9007727BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4771676274937F9007727BB /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D406936F2753B67300E85C65 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
+		D40693712753B68300E85C65 /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
+		D40693732753B85F00E85C65 /* EmailAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddressTests.swift; sourceTree = "<group>"; };
+		D40693752753B87900E85C65 /* WebsiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteTests.swift; sourceTree = "<group>"; };
 		D477166F274937F7007727BB /* ProfileCreation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileCreation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4771672274937F7007727BB /* ProfileCreationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationApp.swift; sourceTree = "<group>"; };
 		D4771674274937F7007727BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D406936E2753B65700E85C65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D406936F2753B67300E85C65 /* EmailAddress.swift */,
+				D40693712753B68300E85C65 /* Website.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D4771666274937F7007727BB = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +122,7 @@
 		D4771671274937F7007727BB /* ProfileCreation */ = {
 			isa = PBXGroup;
 			children = (
+				D406936E2753B65700E85C65 /* Model */,
 				D47716AB274C08BF007727BB /* View Components */,
 				D47716AA274C0885007727BB /* Views */,
 				D4771672274937F7007727BB /* ProfileCreationApp.swift */,
@@ -127,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				D4771683274937F9007727BB /* ProfileCreationTests.swift */,
+				D40693732753B85F00E85C65 /* EmailAddressTests.swift */,
+				D40693752753B87900E85C65 /* WebsiteTests.swift */,
 			);
 			path = ProfileCreationTests;
 			sourceTree = "<group>";
@@ -294,6 +314,8 @@
 				D4771675274937F7007727BB /* ContentView.swift in Sources */,
 				D47716A7274C06FF007727BB /* ConfirmationView.swift in Sources */,
 				D4BB9EBA274DC5B0000069C9 /* ConfirmButton.swift in Sources */,
+				D40693722753B68300E85C65 /* Website.swift in Sources */,
+				D40693702753B67300E85C65 /* EmailAddress.swift in Sources */,
 				D47716A9274C0717007727BB /* SignUpView.swift in Sources */,
 				D4771673274937F7007727BB /* ProfileCreationApp.swift in Sources */,
 				D47716A5274C060B007727BB /* TextFieldPadding.swift in Sources */,
@@ -305,6 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4771684274937F9007727BB /* ProfileCreationTests.swift in Sources */,
+				D40693762753B87900E85C65 /* WebsiteTests.swift in Sources */,
+				D40693742753B85F00E85C65 /* EmailAddressTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
