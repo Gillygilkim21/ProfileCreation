@@ -1,5 +1,5 @@
 //
-//  ValidatedField.swift
+//  ValidatableField.swift
 //  ProfileCreation
 //
 //  Created by Gilbert Kim on 11/28/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ValidatedField<T>: View where T: Validatable {
+struct ValidatableField<T>: View where T: Validatable {
 	
 	let title: String
 	@Binding var field: T
@@ -29,8 +29,8 @@ struct ValidatedField<T>: View where T: Validatable {
     }
 }
 
-struct ValidatedField_Previews: PreviewProvider {
+struct ValidatableField_Previews: PreviewProvider {
     static var previews: some View {
-		ValidatedField<EmailAddress>(title: "Title", field: .constant(EmailAddress(value: "email@email.com")))
+		ValidatableField<EmailAddress>(title: "Title", field: .constant(EmailAddress(value: "email@email.com")))
     }
 }

@@ -23,11 +23,11 @@ struct SignUpView: View {
 				TextField(String(localized: "first_name_label"), text: $firstName)
 					.modifier(TextFieldPadding())
 				
-				ValidatedField<EmailAddress>(title: String(localized: "email_address_label") + "*", field: $emailAddress)
+				ValidatableField<EmailAddress>(title: String(localized: "email_address_label") + "*", field: $emailAddress)
 				
 				PasswordField(password: $password)
 				
-				ValidatedField<Website>(title: String(localized: "website_label"), field: $website)
+				ValidatableField<Website>(title: String(localized: "website_label"), field: $website)
 				
 				Text(String(localized: "required_field_instructions"))
 					.foregroundColor(Color.gray)
@@ -42,7 +42,7 @@ struct SignUpView: View {
 	}
 	
 	private func disableConfirmButton() -> Bool {
-		return password.isEmpty || !emailAddress.isValid() || !website.isValid()
+		return password.isEmpty || emailAddress.value.isEmpty || !emailAddress.isValid() || !website.isValid()
 	}
 }
 

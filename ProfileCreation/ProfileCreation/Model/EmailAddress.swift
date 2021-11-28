@@ -11,7 +11,7 @@ struct EmailAddress: Validatable {
 	var value: String = ""
 	
 	func isValid() -> Bool {
-		return !value.isEmpty && isValidEmailFormat()
+		return value.isEmpty || isValidEmailFormat()
 	}
 	
 	private func isValidEmailFormat() -> Bool {
