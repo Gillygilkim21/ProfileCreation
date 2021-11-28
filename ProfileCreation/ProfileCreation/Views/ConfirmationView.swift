@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ConfirmationView: View {
 	
-	@State var firstName: String
-	@State var emailAddress: EmailAddress
-	@State var website: Website
+	let firstName: String
+	let emailAddress: EmailAddress
+	let website: Website
 	
 	var body: some View {
 		VStack() {
