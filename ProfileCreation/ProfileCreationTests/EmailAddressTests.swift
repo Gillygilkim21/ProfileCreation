@@ -9,25 +9,34 @@ import XCTest
 @testable import ProfileCreation
 
 class EmailAddressTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+	
+	var emailAddress: EmailAddress!
+	
+	override func setUpWithError() throws {
+		try super.setUpWithError()
+	}
+	
+	override func tearDownWithError() throws {
+		emailAddress = nil
+		try super.tearDownWithError()
+	}
+	
+	private func createEmailAddress(_ value: String) {
+		emailAddress = EmailAddress(value: value)
+	}
+	
+	func testInvalidEmail() throws {
+		createEmailAddress("invalidEmail")
+		XCTAssertFalse(emailAddress.isValid())
+	}
+	
+	func testValidEmail() throws {
+		createEmailAddress("validEmail@gmail.com")
+		XCTAssertTrue(emailAddress.isValid())
+	}
+	
+	func testEmptyEmail() throws {
+		createEmailAddress("")
+		XCTAssertFalse(emailAddress.isValid())
+	}
 }

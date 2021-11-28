@@ -10,24 +10,43 @@ import XCTest
 
 class WebsiteTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+	var website: Website!
+	
+	override func setUpWithError() throws {
+		try super.setUpWithError()
+	}
+	
+	override func tearDownWithError() throws {
+		website = nil
+		try super.tearDownWithError()
+	}
+	
+	private func createWebsite(_ value: String) {
+		website = Website(value: value)
+	}
+	
+	func testInvalidWebsite() throws {
+		createWebsite("invalidWebsite")
+		XCTAssertFalse(website.isValid())
+	}
+	
+	func testValidWebsite() throws {
+		createWebsite("validWebsite.com")
+		XCTAssertTrue(website.isValid())
+	}
+	
+	func testValidWebsiteWithHttp() throws {
+		createWebsite("http://validWebsite.com")
+		XCTAssertTrue(website.isValid())
+	}
+	
+	func testValidWebsiteWithHttps() throws {
+		createWebsite("https://validWebsite.com")
+		XCTAssertTrue(website.isValid())
+	}
+	
+	func testEmptyWebsite() throws {
+		createWebsite("")
+		XCTAssertTrue(website.isValid())
+	}
 }

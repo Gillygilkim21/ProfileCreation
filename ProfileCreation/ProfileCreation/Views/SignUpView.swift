@@ -13,9 +13,7 @@ struct SignUpView: View {
 	@State private var emailAddress: EmailAddress = EmailAddress(value: "")
 	@State private var password: String = ""
 	@State private var website: Website = Website(value: "")
-	
-//	@State private var isSecured: Bool = true
-	
+		
 	var body: some View {
 		NavigationView {
 			VStack {
