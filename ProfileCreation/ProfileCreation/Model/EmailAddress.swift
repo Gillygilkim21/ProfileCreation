@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EmailAddress {
+struct EmailAddress: Validatable {
 	var value: String = ""
 	
 	func isValid() -> Bool {

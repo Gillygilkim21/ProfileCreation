@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Website {
+struct Website: Validatable {
 	var value: String = ""
 	
 	func isValid() -> Bool {
