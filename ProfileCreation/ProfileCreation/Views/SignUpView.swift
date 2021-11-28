@@ -14,7 +14,7 @@ struct SignUpView: View {
 	@State private var password: String = ""
 	@State private var website: Website = Website(value: "")
 	
-	@State private var isSecured: Bool = true
+//	@State private var isSecured: Bool = true
 	
 	var body: some View {
 		NavigationView {
@@ -39,27 +39,7 @@ struct SignUpView: View {
 					}
 				}
 				
-				ZStack {
-					if (isSecured) {
-						SecureField(String(localized: "password_label") + "*", text: $password)
-							.modifier(TextFieldPadding())
-					} else {
-						TextField(String(localized: "password_label") + "*", text: $password)
-							.modifier(TextFieldPadding())
-					}
-					if (!password.isEmpty) {
-						HStack {
-							Spacer()
-							Button(action: {
-								isSecured.toggle()
-							}, label: {
-								Image(systemName: isSecured ? "eye.slash" : "eye")
-									.foregroundColor(.gray)
-									.padding(.trailing, 24)
-							})
-						}
-					}
-				}
+				PasswordField(password: $password)
 				
 				ZStack {
 					TextField(String(localized: "website_label"), text: $website.value)
